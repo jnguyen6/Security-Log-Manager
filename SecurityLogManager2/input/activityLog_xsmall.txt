@@ -1,0 +1,5 @@
+USERNAME, TIMESTAMP, ACTION, RESOURCE
+fzalcala, 04/26/2017 12:33:15PM, sort, ICD-9 Code 196
+fzalcala, 07/03/2017 12:36:05AM, sort, ICD-9 Code 196
+quhundley, 08/04/2017 11:01:45AM, sort, ICD-9 Code 196
+jnguyen, 01/23/2018 03:13:18PM, view, medical records
