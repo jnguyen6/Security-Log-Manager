@@ -4,6 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import edu.ncsu.csc316.security_log.data.LogEntry;
+import edu.ncsu.csc316.security_log.dictionary.ArrayBasedList;
+import edu.ncsu.csc316.security_log.dictionary.Dictionary;
+
 /**
  * Tests the SecurityLogManager class. This test class reuses the
  * SecurityLogManagerTest class from CSC316 project 1.
@@ -46,6 +50,10 @@ public class SecurityLogManagerTest {
 		expected2 += "   view medical records: frequency: 1, percentage: 25.0%\n]";
 		String actual2 = slm.generateOperationalProfile("04/26/2017 12:33:15PM", "01/23/2018 03:13:18PM");
 		assertEquals(expected2, actual2);
+		
+		slm = new SecurityLogManager(validTestFile2);
+		actual = slm.generateOperationalProfile("04/26/2007 12:33:15PM", "01/23/2020 03:13:18PM");
+		
 	}
 
 	/**

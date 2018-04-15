@@ -140,4 +140,12 @@ public class SecurityLogManager {
 		}
 		return totalFrequency;
 	}
+	
+	public HashTable<LogEntry> getHashTable() {
+		return (HashTable<LogEntry>) logDictionary;
+	}
+	
+	public ArrayBasedList<LogEntry> getList() {
+		return (ArrayBasedList<LogEntry>) logList;
+	}
 }
