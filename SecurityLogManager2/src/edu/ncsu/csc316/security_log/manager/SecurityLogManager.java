@@ -1,7 +1,5 @@
 package edu.ncsu.csc316.security_log.manager;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.FileNotFoundException;
 import java.util.Comparator;
 
