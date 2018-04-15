@@ -64,20 +64,7 @@ public class SecurityLogManager {
 				LogEntry e = logDictionary.lookUp(logList.get(i));
 				if (e == null) {
 					logDictionary.insert(logList.get(i));
-					boolean foundEntry = false;
-					for (int j = 0; j < uniqueEntriesL.size(); j++) {
-						if (uniqueEntriesL.get(j).getAction().equals(logList.get(i).getAction())
-						     && uniqueEntriesL.get(j).getResource().equals(logList.get(i).getResource())) {
-							foundEntry = true;
-							uniqueEntriesL.get(j).incrementFrequency();
-							break;
-						}
-					}
-					if (!foundEntry) {
-						uniqueEntriesL.insert(logList.get(i));
-					}
-					foundEntry = false;
-//					uniqueEntriesL.insert(logList.get(i));
+					uniqueEntriesL.insert(logList.get(i));
 				} else {
 					e.incrementFrequency();
 				}

@@ -112,13 +112,15 @@ public class HashTable<E> implements Dictionary<E> {
 		int index = compress(value.hashCode());
 		Node current = buckets.get(index);
 		while (current != null) {
-//			if (current.data instanceof LogEntry) {
-//				if (((LogEntry) current.data).getAction().equals(((LogEntry) value).getAction())
-//						&& ((LogEntry) current.data).getResource().equals(((LogEntry) value).getResource())) {
-//					return current.data;
-//				
-			if (current.data.equals(value)) {
-				return current.data;
+			if (current.data instanceof LogEntry) {
+				if (((LogEntry) current.data).getAction().equals(((LogEntry) value).getAction())
+						&& ((LogEntry) current.data).getResource().equals(((LogEntry) value).getResource())) {
+					return current.data;
+				}
+			} else {
+			    if (current.data.equals(value)) {
+				    return current.data;
+			    }
 			}
 			current = current.next;
 		}
