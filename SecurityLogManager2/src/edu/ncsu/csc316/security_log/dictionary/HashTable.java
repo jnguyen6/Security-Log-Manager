@@ -29,9 +29,9 @@ public class HashTable<E> implements Dictionary<E> {
 	 * some initial default capacity
 	 */
 	public HashTable() {
-		buckets = new ArrayBasedList<Node>();
+		buckets = new ArrayBasedList<Node>(20);
 		size = 0;
-		capacity = INIT_SIZE;
+		capacity = 20;
 	}
 	
 	/**

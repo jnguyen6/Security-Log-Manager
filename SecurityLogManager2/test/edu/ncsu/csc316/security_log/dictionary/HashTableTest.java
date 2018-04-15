@@ -21,7 +21,7 @@ public class HashTableTest {
 		HashTable<String> ht = new HashTable<String>();
 		assertTrue(ht instanceof HashTable);
 		assertEquals(0, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 	}
 
 	/**
@@ -31,34 +31,34 @@ public class HashTableTest {
 	public void testInsert() {
 		HashTable<String> ht = new HashTable<String>();
 		assertEquals(0, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("apple");
 		assertEquals(1, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("banana");
 		assertEquals(2, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("kiwi");
 		assertEquals(3, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("orange");
 		assertEquals(4, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("grape");
 		assertEquals(5, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("peach");
 		assertEquals(6, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("lime");
 		assertEquals(7, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("lemon");
 		assertEquals(8, ht.size());
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("dragon fruit");
 		assertEquals(9, ht.size());
-		assertEquals(21, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		
 	}
 
@@ -172,7 +172,7 @@ public class HashTableTest {
 	@Test
 	public void testGetHashTableLength() {
 		HashTable<String> ht = new HashTable<String>();
-		assertEquals(10, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 		ht.insert("apple");
 		ht.insert("banana");
 		ht.insert("kiwi");
@@ -182,7 +182,7 @@ public class HashTableTest {
 		ht.insert("lime");
 		ht.insert("lemon");
 		ht.insert("dragon fruit");
-		assertEquals(21, ht.getHashTableLength());
+		assertEquals(20, ht.getHashTableLength());
 	}
 
 }
