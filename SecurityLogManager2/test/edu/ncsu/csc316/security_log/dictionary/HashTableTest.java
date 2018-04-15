@@ -59,6 +59,16 @@ public class HashTableTest {
 		ht.insert("dragon fruit");
 		assertEquals(9, ht.size());
 		assertEquals(20, ht.getHashTableLength());
+		ht.insert("durian");
+		ht.insert("cherry");
+		ht.insert("cucumber");
+		ht.insert("apricot");
+		ht.insert("cantaloupe");
+		ht.insert("watermelon");
+		ht.insert("fig");
+		ht.insert("lychee");
+		ht.insert("plum");
+		assertEquals(41, ht.getHashTableLength());
 		
 	}
 
