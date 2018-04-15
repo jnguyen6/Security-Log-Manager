@@ -4,10 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import edu.ncsu.csc316.security_log.data.LogEntry;
-import edu.ncsu.csc316.security_log.dictionary.ArrayBasedList;
-import edu.ncsu.csc316.security_log.dictionary.Dictionary;
-
 /**
  * Tests the SecurityLogManager class. This test class reuses the
  * SecurityLogManagerTest class from CSC316 project 1.
