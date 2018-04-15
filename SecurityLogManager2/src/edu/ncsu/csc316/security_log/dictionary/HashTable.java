@@ -4,6 +4,7 @@ package edu.ncsu.csc316.security_log.dictionary;
  * Class that represents a hash table used as a data structure.
  * 
  * @author Jimmy Nguyen
+ * @param <E> the generic element type
  */
 public class HashTable<E> implements Dictionary<E> {
 
@@ -77,23 +78,18 @@ public class HashTable<E> implements Dictionary<E> {
 		for (int i = 0; i < size; i++) {
 			if (buckets.get(i) != null) {
 				int index = compress(buckets.get(i).key);
-				if (newBuckets.get(index) != null) {
-					Node n = new Node(buckets.get(i).data, buckets.get(i).key, newBuckets.get(index));
-					newBuckets.set(index, n);
-				} else {
-					Node n = new Node(buckets.get(i).data, buckets.get(i).key);
-				    newBuckets.set(index, n);
-				}
+				Node n = new Node(buckets.get(i).data, buckets.get(i).key);
+				newBuckets.set(index, n);
 				Node current = buckets.get(i).next;
 				while (current != null) {
 					index = compress(current.key);
 					if (newBuckets.get(index) != null) {
-						Node n = new Node(current.data, current.key, newBuckets.get(index));
+						n = new Node(current.data, current.key, newBuckets.get(index));
 						newBuckets.set(index, n);
 					} else {
-						Node n = new Node(current.data, current.key);
-					    newBuckets.set(index, n);
+						n = new Node(current.data, current.key);
 					}
+				    newBuckets.set(index, n);
 					current = current.next;
 				}
 			}

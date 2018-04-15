@@ -2,12 +2,10 @@ package edu.ncsu.csc316.security_log.dictionary;
 
 import static org.junit.Assert.*;
 
-import java.util.Comparator;
 
 import org.junit.Test;
 
 import edu.ncsu.csc316.security_log.data.LogEntry;
-import edu.ncsu.csc316.security_log.util.TimestampComparator;
 
 /**
  * Tests the ArrayBasedList class. This JUnit test class is reused
