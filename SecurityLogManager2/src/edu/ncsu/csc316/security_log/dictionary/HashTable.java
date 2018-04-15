@@ -1,5 +1,7 @@
 package edu.ncsu.csc316.security_log.dictionary;
 
+import edu.ncsu.csc316.security_log.data.LogEntry;
+
 /**
  * Class that represents a hash table used as a data structure.
  * 
@@ -111,8 +113,15 @@ public class HashTable<E> implements Dictionary<E> {
 		int index = compress(value.hashCode());
 		Node current = buckets.get(index);
 		while (current != null) {
-			if (current.key == value.hashCode()) {
-				return current.data;
+			if (current.data instanceof LogEntry) {
+				if (((LogEntry) current.data).getAction().equals(((LogEntry) value).getAction())
+						&& ((LogEntry) current.data).getResource().equals(((LogEntry) value).getResource())) {
+					return current.data;
+				}
+			} else {
+			    if (current.data.equals(value)) {
+				    return current.data;
+			    }
 			}
 			current = current.next;
 		}

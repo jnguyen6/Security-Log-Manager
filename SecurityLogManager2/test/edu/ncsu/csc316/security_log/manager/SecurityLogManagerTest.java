@@ -46,8 +46,6 @@ public class SecurityLogManagerTest {
 		expected2 += "   view medical records: frequency: 1, percentage: 25.0%\n]";
 		String actual2 = slm.generateOperationalProfile("04/26/2017 12:33:15PM", "01/23/2018 03:13:18PM");
 		assertEquals(expected2, actual2);
-		
-		
 	}
 
 	/**
