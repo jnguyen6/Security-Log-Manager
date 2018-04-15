@@ -19,8 +19,20 @@ public class ArrayBasedList<E> implements List<E> {
 	private int size;
 	
 	/**
+	 * Constructor that creates an empty array-based list of generic elements
+	 * with a capacity of the given parameter value.
+	 * 
+	 * @param capacity the capacity of the array-based list to set
+	 */
+	@SuppressWarnings("unchecked")
+	public ArrayBasedList(int capacity) {
+		list = (E[]) (new Object[capacity]);
+		size = 0;
+	}
+	
+	/**
 	 * Constructor that creates an empty array-based list of generic elements, which 
-	 * an initial capacity of 10.
+	 * has an initial capacity of 10.
 	 */
 	@SuppressWarnings("unchecked")
 	public ArrayBasedList() {
@@ -128,36 +140,26 @@ public class ArrayBasedList<E> implements List<E> {
 	}
 
 	/**
-	 * Returns the element retrieved from the list at a specific index. If the given index
-	 * is invalid, then an IndexOutOfBoundsException is thrown.
+	 * Returns the element retrieved from the list at a specific index.
 	 * 
 	 * @param index the index to retrieve the element at
 	 * @return the element that was accessed from the list
-	 * @throws IndexOutOfBoundsException if the given index is invalid
 	 */
 	@Override
 	public E get(int index) {
-		if (index < 0 || index > size() - 1) {
-			throw new IndexOutOfBoundsException("The given index is invalid.");
-		}
 		return list[index];
 	}
 
 	/**
-	 * Replaces the element in the list with a new element at a specific index. If the
-	 * given index is invalid, then an IndexOutOfBoundsException is thrown. Returns the
-	 * element that was replaced.
+	 * Replaces the element in the list with a new element at a specific index. 
+	 * Returns the element that was replaced.
 	 * 
 	 * @param index the index to set the element at
 	 * @param e the element to set in the list
 	 * @return the element that was replaced
-	 * @throws IndexOutOfBoundsException if the given index is invalid
 	 */
 	@Override
 	public E set(int index, E e) {
-		if (index < 0 || index > size() - 1) {
-			throw new IndexOutOfBoundsException("The given index is invalid.");
-		}
 		E replacedVal = list[index];
 		list[index] = e;
 		return replacedVal;

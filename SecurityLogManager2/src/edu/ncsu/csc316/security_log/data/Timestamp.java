@@ -176,8 +176,7 @@ public class Timestamp implements Comparable<Timestamp> {
 	}
 
 	/**
-	 * Compares two Timestamp objects to determine if both of them 
-	 * hash to the same numerical value.
+	 * Calculates and returns the hash code value of the Timestamp object.
 	 * 
 	 * @return the result of the comparison between the two Timestamp objects
 	 */

@@ -166,22 +166,28 @@ public class LogEntry implements FrequencyCounter {
 		sb.append(getResource());
 		return sb.toString();
 	}
-
+	
 	/**
-	 * Compares two LogEntry objects to determine if both of them hash to the 
-	 * same numerical value.
+	 * Calculates and returns the hash code of the LogEntry object. This
+	 * hash code is the action and resource of the LogEntry object, which
+	 * specifically serves as the key value for a hash table. The hashing
+	 * function that is used to create this specific hash code is cyclic-
+	 * shift hashing. The cyclic-shift hashing function is referenced from
+	 * the Hash Tables: Hash Functions lecture slides on page 27 provide
+	 * by Jason King.
 	 * 
-	 * @return the result of comparing the two LogEntry objects
+	 * @return the hash code of the LogEntry object, which consists of the
+	 * action and resource
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((action == null) ? 0 : action.hashCode());
-		result = prime * result + frequency;
-		result = prime * result + ((resource == null) ? 0 : resource.hashCode());
-		result = prime * result + ((timestamp == null) ? 0 : timestamp.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		int result = 0;
+		String s = getAction() + " " + getResource();
+		int len = s.length();
+		for (int i = 0; i < len; i++) {
+			result = (result << 5) | (result >>> 27);
+			result += s.charAt(i);
+		}
 		return result;
 	}
 

@@ -151,22 +151,6 @@ public class ArrayBasedListTest {
 	public void testSet() {
 		ArrayBasedList<String> l = new ArrayBasedList<String>();
 		l.insert("apple");
-		try {
-			l.set(-1, "grape");
-			fail();
-		} catch (IndexOutOfBoundsException e) {
-			assertEquals("The given index is invalid.", e.getMessage());
-			assertEquals("apple", l.get(0));
-			assertEquals(1, l.size());
-		}
-		try {
-			l.set(1, "grape");
-			fail();
-		} catch (IndexOutOfBoundsException e) {
-			assertEquals("The given index is invalid.", e.getMessage());
-			assertEquals("apple", l.get(0));
-			assertEquals(1, l.size());
-		}
 		assertEquals("apple", l.set(0, "grape"));
 		assertEquals(1, l.size());
 		assertEquals("grape", l.get(0));

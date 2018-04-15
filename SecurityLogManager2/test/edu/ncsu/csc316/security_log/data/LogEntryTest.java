@@ -147,11 +147,16 @@ public class LogEntryTest {
 		LogEntry l3 = new LogEntry("jnguyen", "01/31/2018 02:58:00PM", "delete", "medical history");
 		LogEntry l4 = new LogEntry("jnguyen", "01/31/2018 02:58:00PM", "view", "immunization records");
 		LogEntry l5 = new LogEntry("james", "01/31/2018 02:58:00PM", "view", "medical history");
+		
 		assertTrue(l.hashCode() == l.hashCode());
-		assertFalse(l.hashCode() == l2.hashCode());
+		assertTrue(l.hashCode() == l2.hashCode());
 		assertFalse(l.hashCode() == l3.hashCode());
 		assertFalse(l.hashCode() == l4.hashCode());
-		assertFalse(l.hashCode() == l5.hashCode());
+		assertTrue(l.hashCode() == l5.hashCode());
+		
+		Timestamp ts = new Timestamp("01/31/2018", "02:58:00PM");
+		Timestamp ts2 = new Timestamp("02/28/2018", "12:45:27AM");
+		assertFalse(ts.hashCode() == ts2.hashCode());
 	}
 	
 	/**
