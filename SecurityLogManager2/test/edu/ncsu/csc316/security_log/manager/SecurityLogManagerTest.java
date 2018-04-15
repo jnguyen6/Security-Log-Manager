@@ -48,7 +48,7 @@ public class SecurityLogManagerTest {
 		assertEquals(expected2, actual2);
 		
 		slm = new SecurityLogManager(validTestFile2);
-		actual = slm.generateOperationalProfile("04/26/2007 12:33:15PM", "01/23/2020 03:13:18PM");
+		actual = slm.generateOperationalProfile("04/26/2010 12:33:15PM", "01/23/2019 03:13:18PM");
 		
 	}
 

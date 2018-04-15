@@ -1,5 +1,7 @@
 package edu.ncsu.csc316.security_log.manager;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.FileNotFoundException;
 import java.util.Comparator;
 
@@ -62,7 +64,20 @@ public class SecurityLogManager {
 				LogEntry e = logDictionary.lookUp(logList.get(i));
 				if (e == null) {
 					logDictionary.insert(logList.get(i));
-					uniqueEntriesL.insert(logList.get(i));
+					boolean foundEntry = false;
+					for (int j = 0; j < uniqueEntriesL.size(); j++) {
+						if (uniqueEntriesL.get(j).getAction().equals(logList.get(i).getAction())
+						     && uniqueEntriesL.get(j).getResource().equals(logList.get(i).getResource())) {
+							foundEntry = true;
+							uniqueEntriesL.get(j).incrementFrequency();
+							break;
+						}
+					}
+					if (!foundEntry) {
+						uniqueEntriesL.insert(logList.get(i));
+					}
+					foundEntry = false;
+//					uniqueEntriesL.insert(logList.get(i));
 				} else {
 					e.incrementFrequency();
 				}
