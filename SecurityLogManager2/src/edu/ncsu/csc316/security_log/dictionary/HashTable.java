@@ -78,7 +78,11 @@ public class HashTable<E> implements Dictionary<E> {
 		int originalLen = capacity;
 		capacity = capacity * 2 + 1;
 		ArrayBasedList<Node> newBuckets = new ArrayBasedList<Node>(capacity);
+		int num = 0;
 		for (int i = 0; i < originalLen; i++) {
+			if (num == size) {
+				break;
+			}
 			if (buckets.get(i) != null) {
 				int index = compress(buckets.get(i).key);
 				Node n = null;
@@ -88,6 +92,7 @@ public class HashTable<E> implements Dictionary<E> {
 				    n = new Node(buckets.get(i).data, buckets.get(i).key);
 				}
 				newBuckets.set(index, n);
+				num++;
 				Node current = buckets.get(i).next;
 				while (current != null) {
 					index = compress(current.key);
@@ -97,6 +102,7 @@ public class HashTable<E> implements Dictionary<E> {
 						n = new Node(current.data, current.key);
 					}
 					newBuckets.set(index, n);
+					num++;
 					current = current.next;
 				}
 			}
