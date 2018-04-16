@@ -11,7 +11,7 @@ import edu.ncsu.csc316.security_log.data.LogEntry;
 public class HashTable<E> implements Dictionary<E> {
 
 	/** The initial size of the hash table. */
-	private static final int INIT_SIZE = 10;
+	private static final int INIT_SIZE = 17;
 	/** The golden ratio value used by the compression function. */
 	private static final double GOLDEN_RATIO = ((1 + Math.sqrt(5)) / 2) - 1;
 	/** The threshold value that the load factor is expected to be within. */
@@ -29,7 +29,7 @@ public class HashTable<E> implements Dictionary<E> {
 	 * some initial default capacity
 	 */
 	public HashTable() {
-		buckets = new ArrayBasedList<Node>();
+		buckets = new ArrayBasedList<Node>(INIT_SIZE);
 		size = 0;
 		capacity = INIT_SIZE;
 	}
