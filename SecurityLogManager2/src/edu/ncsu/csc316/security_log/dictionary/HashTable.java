@@ -81,23 +81,22 @@ public class HashTable<E> implements Dictionary<E> {
 		for (int i = 0; i < originalLen; i++) {
 			if (buckets.get(i) != null) {
 				int index = compress(buckets.get(i).key);
+				Node n = null;
 				if (newBuckets.get(index) != null) {
-					Node n = new Node(buckets.get(i).data, buckets.get(i).key, newBuckets.get(index));
-					newBuckets.set(index, n);
+					n = new Node(buckets.get(i).data, buckets.get(i).key, newBuckets.get(index));
 				} else {
-				    Node n = new Node(buckets.get(i).data, buckets.get(i).key);
-				    newBuckets.set(index, n);
+				    n = new Node(buckets.get(i).data, buckets.get(i).key);
 				}
+				newBuckets.set(index, n);
 				Node current = buckets.get(i).next;
 				while (current != null) {
 					index = compress(current.key);
 					if (newBuckets.get(index) != null) {
-						Node n = new Node(current.data, current.key, newBuckets.get(index));
-						newBuckets.set(index, n);
+						n = new Node(current.data, current.key, newBuckets.get(index));
 					} else {
-						Node n = new Node(current.data, current.key);
-						newBuckets.set(index, n);
+						n = new Node(current.data, current.key);
 					}
+					newBuckets.set(index, n);
 					current = current.next;
 				}
 			}
