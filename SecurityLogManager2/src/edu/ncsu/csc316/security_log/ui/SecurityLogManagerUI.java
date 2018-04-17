@@ -32,7 +32,7 @@ public class SecurityLogManagerUI {
 		SecurityLogManagerUI ui = new SecurityLogManagerUI();
 		Scanner console = new Scanner(System.in);
 		String fileName = "";
-		System.out.print("Enter an input file: ");
+		System.out.print("Enter an input file that contains log entry information: ");
 		fileName = console.nextLine();
 		if (!fileName.endsWith("txt")) {
 			System.out.print("\nThe input file is invalid. The program will close.");
@@ -53,11 +53,11 @@ public class SecurityLogManagerUI {
 	public void processUserAction(Scanner console, String fileName) {
 		slm = new SecurityLogManager(fileName);
 		String input = "";
-		System.out.print("Generate Operational Profile (G), Create a User Report (U),"
+		System.out.print("Generate Operational Profile (O), Create a User Report (U),"
 				+ " or Quit (Q): ");
 		input = console.nextLine();
-		while (input.equalsIgnoreCase("G") || input.equalsIgnoreCase("U")) {
-		    if (input.equalsIgnoreCase("G")) {
+		while (input.equalsIgnoreCase("O") || input.equalsIgnoreCase("U")) {
+		    if (input.equalsIgnoreCase("O")) {
 			    System.out.print("Please provide the start timestamp: ");
 			    String start = console.nextLine();
 			    System.out.print("Please provide the end timestamp: ");
@@ -65,7 +65,7 @@ public class SecurityLogManagerUI {
 			    System.out.print("Generating Operational Profile...\n\n");
 			    String operationalProfile = slm.generateOperationalProfile(start, end);
 			    System.out.print(operationalProfile);
-			    System.out.print("\n\nThe operational profile has been sucessfully created.\n\n.");
+			    System.out.print("\n\nThe operational profile has been sucessfully created.\n\n");
 			
 		    } else {
 			    System.out.print("Please provide the username to generate the user report for: ");
@@ -73,9 +73,9 @@ public class SecurityLogManagerUI {
 			    System.out.print("Generating User Report...\n\n");
 			    String userReport = slm.getUserReport(username);
 			    System.out.print(userReport);
-			    System.out.print("\n\nThe user report has been sucessfully created.\n\n.");
+			    System.out.print("\n\nThe user report has been sucessfully created.\n\n");
 		    }
-			System.out.print("Generate Operational Profile (G), Create a User Report (U),"
+			System.out.print("Generate Operational Profile (O), Create a User Report (U),"
 					+ " or Quit (Q): ");
 			input = console.nextLine();
 		}
