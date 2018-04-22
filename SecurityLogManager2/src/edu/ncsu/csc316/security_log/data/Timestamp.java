@@ -178,7 +178,7 @@ public class Timestamp implements Comparable<Timestamp> {
 	/**
 	 * Calculates and returns the hash code value of the Timestamp object.
 	 * 
-	 * @return the result of the comparison between the two Timestamp objects
+	 * @return the resulting hash code of the Timestamp object
 	 */
 	@Override
 	public int hashCode() {
@@ -202,42 +202,18 @@ public class Timestamp implements Comparable<Timestamp> {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
 		Timestamp other = (Timestamp) obj;
-		if (day == null) {
-			if (other.day != null)
-				return false;
-		} else if (!day.equals(other.day))
+	    if (!day.equals(other.day))
 			return false;
-		if (hour == null) {
-			if (other.hour != null)
-				return false;
-		} else if (!hour.equals(other.hour))
+	    if (!hour.equals(other.hour))
 			return false;
-		if (minutes == null) {
-			if (other.minutes != null)
-				return false;
-		} else if (!minutes.equals(other.minutes))
+	    if (!minutes.equals(other.minutes))
 			return false;
-		if (month == null) {
-			if (other.month != null)
-				return false;
-		} else if (!month.equals(other.month))
+	    if (!month.equals(other.month))
 			return false;
-		if (secondsXM == null) {
-			if (other.secondsXM != null)
-				return false;
-		} else if (!secondsXM.equals(other.secondsXM))
+	    if (!secondsXM.equals(other.secondsXM))
 			return false;
-		if (year == null) {
-			if (other.year != null)
-				return false;
-		} else if (!year.equals(other.year))
+	    if (!year.equals(other.year))
 			return false;
 		return true;
 	}

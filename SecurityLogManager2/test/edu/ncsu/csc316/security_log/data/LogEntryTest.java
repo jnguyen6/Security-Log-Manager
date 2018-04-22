@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
- * Tests the LogEntry class. The test cases will also test the 
- * Timestamp class. This class is reused from the LogEntryTest
- * class from CSC316 project 1.
+ * Tests the LogEntry class.This class is reused from the
+ * LogEntryTest class from CSC316 project 1, with updates
+ * that pertains to removing Timestamp tests.
  * 
  * @author Jimmy Nguyen
  */
@@ -153,10 +153,6 @@ public class LogEntryTest {
 		assertFalse(l.hashCode() == l3.hashCode());
 		assertFalse(l.hashCode() == l4.hashCode());
 		assertTrue(l.hashCode() == l5.hashCode());
-		
-		Timestamp ts = new Timestamp("01/31/2018", "02:58:00PM");
-		Timestamp ts2 = new Timestamp("02/28/2018", "12:45:27AM");
-		assertFalse(ts.hashCode() == ts2.hashCode());
 	}
 	
 	/**

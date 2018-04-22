@@ -207,27 +207,15 @@ public class LogEntry implements FrequencyCounter {
 		if (getClass() != obj.getClass())
 			return false;
 		LogEntry other = (LogEntry) obj;
-		if (action == null) {
-			if (other.action != null)
-				return false;
-		} else if (!action.equals(other.action))
+		if (!action.equals(other.action))
 			return false;
 		if (frequency != other.frequency)
 			return false;
-		if (resource == null) {
-			if (other.resource != null)
-				return false;
-		} else if (!resource.equals(other.resource))
+		if (!resource.equals(other.resource))
 			return false;
-		if (timestamp == null) {
-			if (other.timestamp != null)
-				return false;
-		} else if (!timestamp.equals(other.timestamp))
+	    if (!timestamp.equals(other.timestamp))
 			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
+	    if (!username.equals(other.username))
 			return false;
 		return true;
 	}

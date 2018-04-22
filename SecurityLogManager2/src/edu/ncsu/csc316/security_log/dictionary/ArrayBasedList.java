@@ -58,7 +58,7 @@ public class ArrayBasedList<E> implements List<E> {
 	/**
 	 * Adds an element at a specific index in the list. If the given index is invalid, then
 	 * an IndexOutOfBoundsException is thrown. Note that this method is referenced from page 261
-	 * of the Data Structures & Algorithm textbook by Michael T. Goodrich, Roberto Tamassia, and
+	 * of the Data Structures and Algorithm textbook by Michael T. Goodrich, Roberto Tamassia, and
 	 * Michael H. Goldwasser.
 	 * 
 	 * @param index the index to add the element at

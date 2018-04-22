@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import edu.ncsu.csc316.security_log.data.LogEntry;
-
 /**
  * Tests the HashTable class.
  * 
