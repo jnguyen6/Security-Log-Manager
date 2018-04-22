@@ -173,7 +173,7 @@ public class LogEntry implements FrequencyCounter {
 	 * specifically serves as the key value for a hash table. The hashing
 	 * function that is used to create this specific hash code is cyclic-
 	 * shift hashing. The cyclic-shift hashing function is referenced from
-	 * the Hash Tables: Hash Functions lecture slides on page 27 provide
+	 * the Hash Tables: Hash Functions lecture slides on page 27 provided
 	 * by Jason King.
 	 * 
 	 * @return the hash code of the LogEntry object, which consists of the

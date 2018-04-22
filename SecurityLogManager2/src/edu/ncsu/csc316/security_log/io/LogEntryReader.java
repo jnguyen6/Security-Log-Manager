@@ -15,7 +15,7 @@ import edu.ncsu.csc316.security_log.dictionary.ArrayBasedList;
 /**
  * Class that reads input from the user activity log file. This class is
  * reused from the LogEntryReader class from CSC316 project 1, with some
- * modifications.
+ * modifications to the readLogEntries method.
  * 
  * @author Jimmy Nguyen
  */

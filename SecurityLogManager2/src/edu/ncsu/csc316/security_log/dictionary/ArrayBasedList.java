@@ -161,9 +161,6 @@ public class ArrayBasedList<E> implements List<E> {
 	@Override
 	public E set(int index, E e) {
 		E replacedVal = list[index];
-//		if (list[index] == null) {
-//			size++;
-//		}
 		list[index] = e;
 		return replacedVal;
 	}

@@ -14,11 +14,12 @@ import edu.ncsu.csc316.security_log.data.LogEntry;
 public class TimestampComparator implements Comparator<LogEntry> {
 
 	/**
-	 * Compares two log entries based on their timestamps. Specifically, the two log entries 
-	 * are compared based on their chronological order. Returns a negative number if the 
-	 * first log entry's timestamp is earlier than the second log entry's timestamp, 0 if 
-	 * both timestamps are the same, or a positive number if the first log entry's timestamp 
-	 * is later than the second log entry's timestamp.
+	 * Compares two log entries based on their timestamps. Specifically,
+	 * the two log entries are compared based on their chronological order.
+	 * Returns a negative number if the first log entry's timestamp is earlier
+	 * than the second log entry's timestamp, 0 if both timestamps are the same,
+	 * or a positive number if the first log entry's timestamp is later than the 
+	 * second log entry's timestamp.
 	 * 
 	 * @param thisEntry the first log entry used for comparison
 	 * @param otherEntry the second log entry used for comparison
